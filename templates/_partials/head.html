@@ -1,0 +1,7 @@
+{% macro head() %}
+<head>
+    <meta charset="utf-8" />
+    <title>{{ config.title }}</title>
+    <link rel="stylesheet" href="{{ get_url(path="style.css", trailing_slash=false) }}">
+</head>
+{% endmacro head %}

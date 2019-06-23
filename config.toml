@@ -1,0 +1,17 @@
+base_url = "http://127.0.0.1:1111"
+compile_sass = true
+title = "Ink demo"
+
+taxonomies = [
+    { name = "tags" }
+]
+
+highlight_code = true
+highlight_theme = "cheerfully-light"
+
+[extra]
+nav = [
+    { type = "taxonomy", value = "tags" },
+    { type = "page", value = "about", title = "about me" },
+    { type = "link", url = "https://github.com/iEverX", title = "github" },
+]

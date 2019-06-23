@@ -1,0 +1,19 @@
+{% macro comment() %}
+{%- if config.extra.etteranc %}
+
+{%- set comment = config.extra.etteranc %}
+
+<span id="comments"></span>
+<script src="https://utteranc.es/client.js"
+        repo="{{ comment.repo | safe }}"
+        issue-term="{{ comment.issue_term | default(value="pathname") }}"
+        {%- if comment.label %}
+            label="{{ comment.label }}"
+        {% endif -%}
+        theme="{{ comment.theme | default(value="github-light") }}"
+        crossorigin="anonymous"
+        async>
+</script>
+
+{% endif %}
+{% endmacro comment %}

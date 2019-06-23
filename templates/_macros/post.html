@@ -1,0 +1,20 @@
+{%- macro meta(page, reading=false) %}
+<div class="post-meta">
+    <span class="post-date">{{ page.date | date }}</span>
+    {% if page.taxonomies.tags %}
+        &middot;
+        {%- for tag in page.taxonomies.tags %}
+            <span class="post-tag u-link">
+                <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>
+            </span>
+        {% endfor %}
+    {% endif %}
+    {% if reading %}
+        &middot;
+        <span class="word_count">{{ page.word_count }} 字</span>
+        &middot;
+        <span class="reading_time">大约需要 {{ page.reading_time }} 分钟</span>
+    {% endif %}
+</div>
+
+{% endmacro meta %}

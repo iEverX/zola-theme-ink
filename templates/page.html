@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "_macros/site.html" as site %}
+{% import "_macros/post.html" as post %}
+{% import "_macros/pagination.html" as pagination %}
+
+{% block main %}
+<div class="post">    
+    <h1 class="post-title">{{ page.title }}</h1>
+    {{ post::meta(page=page, reading=true) }}
+    <div class="post-content">
+        {{ page.content | safe }}
+    </div>
+</div>
+{{ comment::comment() }}
+{{ pagination::navigate(page=page) }}
+{% endblock main %}

@@ -1,0 +1,41 @@
+{%- macro paginate(paginator) %}
+
+{%- if paginator.number_pagers != 1 %}
+    <div class="pagination">
+        <span class="prev">
+            {%- if paginator.previous %}
+                <a href="{{ paginator.previous }}">&xlArr; 上一页</a>
+            {% else %}
+                <a class="disable">&xlArr; 上一页</a>
+            {% endif %}
+        </span>
+        <span class="next">
+            {%- if paginator.next %}
+                <a href="{{ paginator.next }}">下一页 &xrArr;</a>
+            {% else %}
+                <a class="disable">下一页 &xrArr;</a>
+            {% endif %}
+        </span>
+    </div>
+{% endif %}
+
+{% endmacro %}
+
+{%- macro navigate(page) %}
+    <div class="navigation">
+        {%- if page.later %}
+            <span class="prev">
+                <a href="{{ page.later.permalink }}">&xlArr; {{ page.later.title }}</a>
+            </span>
+        {% else %}
+            <span class="prev"></span>
+        {% endif %}
+        {%- if page.earlier %}
+            <span class="next">
+                <a href="{{ page.earlier.permalink }}">{{ page.earlier.title }} &xrArr;</a>
+            </span>
+        {% else %}
+            <span class="next"></span>
+        {% endif %}
+    </div>
+{% endmacro %}

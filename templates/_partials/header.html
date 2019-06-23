@@ -1,0 +1,12 @@
+{% macro header() %}
+<div id="header" class="header">
+    <div class="header-container">
+        <div class="brand">
+            <h1 class="u-link">
+                <a href="/">{{ config.title }}</a>
+            </h1>
+        </div>
+        {{ nav::nav() }}
+    </div>
+</div>
+{% endmacro header%}

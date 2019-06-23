@@ -1,0 +1,29 @@
+{% import "_macros/site.html" as site %}
+{% import "_macros/post.html" as post %}
+{% import "_macros/pagination.html" as pagination %}
+{% import "_partials/head.html" as head %}
+{% import "_partials/header.html" as header %}
+{% import "_partials/footer.html" as footer %}
+{% import "_partials/nav.html" as nav %}
+{% import "_partials/comment.html" as comment %}
+{% import "_partials/page_list.html" as page_list %}
+
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+{%- block head %}
+    {{ head::head() }}
+{% endblock head %}
+<body>
+    <div class="container">
+        <div class="block-container">
+            {%- block header %}
+                {{ header::header() }}
+            {% endblock header %}
+            {%- block main %}
+            {% endblock main %}
+        </div>
+    </div>
+    {%- block footer %}
+        {{ footer::footer() }}
+    {% endblock footer %}
+</body>

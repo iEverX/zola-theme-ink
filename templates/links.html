@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block main %}
+<ul>
+    {%- for link in page.extra.links %}
+        <li style="list-style:none;">
+            <a href="{{ link.url }}">{{ link.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock main %}

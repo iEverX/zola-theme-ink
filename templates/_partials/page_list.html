@@ -1,0 +1,22 @@
+{% macro page_list(pages, paginator=false) %}
+
+<div class="block-index">
+    <div class="posts">
+        {% for page in pages %}
+            <div class="post">
+                <h1 class="post-title u-link">
+                    <a href="{{ page.permalink }}">{{ page.title }}</a>
+                </h1>
+                {{ post::meta(page=page) }}
+                <div class="post-content">
+                    {{ page.content | safe }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% if paginator %}
+        {{ pagination::paginate(paginator=paginator) }}
+    {% endif %}
+</div>
+
+{% endmacro page_list %}

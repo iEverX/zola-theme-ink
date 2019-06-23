@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block main %}
+{%- if paginator %}
+  {{ page_list::page_list(pages=paginator.pages, paginator=paginator) }}
+{% else %}
+  {{ page_list::page_list(pages=section.pages) }}
+{% endif %}
+{% endblock main %}
