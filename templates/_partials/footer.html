@@ -2,7 +2,7 @@
 <div id="footer">
     <div class="footer-container">
         <div class="copyright" >
-            <span> &copy; 2012 - 2019
+            <span> &copy; 2012 - {{ now() | date(format="%Y") }} 
             &hearts;
             <span class="author">{{ config.title }}</span>
         </div>
