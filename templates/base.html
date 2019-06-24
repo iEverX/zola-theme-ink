@@ -7,6 +7,7 @@
 {% import "_partials/nav.html" as nav %}
 {% import "_partials/comment.html" as comment %}
 {% import "_partials/page_list.html" as page_list %}
+{% import "_partials/ga.html" as ga %}
 
 <!DOCTYPE html>
 <html lang="{{ config.default_language }}">
@@ -26,4 +27,7 @@
     {%- block footer %}
         {{ footer::footer() }}
     {% endblock footer %}
+    {%- block track %}
+        {{ ga::track() }}
+    {% endblock %}
 </body>
