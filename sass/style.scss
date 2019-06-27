@@ -5,10 +5,15 @@
 }
 
 html {
-    font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+    font-family: Lato, "PingFang SC", Tahoma, "Microsoft Yahei", sans-serif;
     font-size: 16px;
     min-height: 100%;
     position: relative;
+}
+
+::selection {
+    background-color: #222;
+    color: #fff;
 }
 
 body {
@@ -162,7 +167,7 @@ blockquote {
             font-size: 1.5rem;
             &::before {
                 content: '# ';
-                color: #aaa;
+                color: #999;
                 font-size: 75%;
             }
         }
@@ -171,7 +176,8 @@ blockquote {
             font-size: 1.4rem;
             &::before {
                 content: '## ';
-                color: #aaa;
+                color: #999;
+                font-size: 75%;
             }
         }
 
@@ -179,7 +185,8 @@ blockquote {
             font-size: 1.2rem;
             &::before {
                 content: '### ';
-                color: #aaa;
+                color: #999;
+                font-size: 75%;
             }
         }
     }
