@@ -210,6 +210,18 @@ blockquote {
         }
     }
 
+    .footnote-reference {
+        & > a {
+            color: rgb(114, 114, 114);
+        }
+    }
+
+    .footnote-definition {
+        & > p {
+            display: inline
+        }
+    }
+
     .post-meta {
         .post-tag {
             & > a {
