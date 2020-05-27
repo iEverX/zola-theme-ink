@@ -283,6 +283,10 @@ blockquote {
     color: #777;
     font-size: 1.5rem;
     margin-bottom: 16px;
+
+    .u-link > a {
+        color: #777
+    }
 }
 
 .block-terms {
@@ -292,9 +296,6 @@ blockquote {
         &:visited {
             color: #333;
         }
-    }
-    .values {
-        list-style: none;
     }
 }
 

@@ -4,17 +4,9 @@
 {% block main %}
 
 <div class="block-list">
-    <h1 class="title" id="page-title">{{ taxonomy.name }} &middot; {{ term.name }}</h1>
-    <div class="posts">
-        {% for page in term.pages %}
-        <div class="post">
-            <h1 class="post-title u-link">
-                <a href="{{ page.permalink }}">{{ page.title }}</a>
-            </h1>
-            {{ post::meta(page=page) }}
-        </div>
-        {% endfor %}
-    </div>
+    <h1 class="title" id="page-title">
+        <span class="u-link"><a href="{{ get_url(path=taxonomy.name) }}">{{ taxonomy.name }}</a></span> &middot; {{ term.name }}</h1>
+    {{ post::page_list(pages=term.pages)}}
 </div>
 
 {% endblock main %}
