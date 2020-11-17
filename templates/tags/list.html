@@ -5,14 +5,27 @@
 <div class="block-terms">
     <h1 class="title" id="page-title"> {{ taxonomy.name }}</h1>
     <div class="terms">
+    {% set min = 1000000 %}
+    {% set max = 1 %}
     {%- for term in terms %}
-        <div class="term">
-            <h2 class="name u-link">
-                <a href="{{ term.permalink }}">{{ term.name }} </a>
-            </h2>
-
-            {{ post::page_list(pages=term.pages)}}
-        </div>
+        {%- set n = term.pages | length %}
+        {%- if min > n %}
+            {% set_global min = n %}
+        {% endif %}
+        {%- if max < n %}
+            {% set_global max = n%}
+        {% endif %}
+    {% endfor %}
+    {% set ratio = 16 %}
+    {% set base = 16 %}
+    {%- for term in terms %}
+    <span class="u-link">
+        {%- set n = term.pages | length %}
+        {%- set f = (n-min)/(max-min) %}
+        {%- set f = ratio * f %}
+        {%- set f = base + f %}
+        <a href="{{ term.permalink }}" style="font-size: {{f}}px">{{ term.name }}</a>
+    </span>
     {% endfor %}
     </div>
 </div>
