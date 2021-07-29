@@ -16,11 +16,11 @@ demo = ""
 # The theme author info: you!
 [author]
 name = "ever"
-homepage = "https://blog.evercoding.net"
+homepage = "https://blog.guolx.com"
 
 # If this is porting a theme from another static site engine, provide
 # the info of the original author here
 [original]
 name = "ever"
-homepage = "https://blog.evercoding.net"
+homepage = "https://blog.guolx.com"
 repo = "https://www.github.com/iEverX/hugo-theme-ink"
