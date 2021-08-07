@@ -199,8 +199,12 @@ blockquote {
             }
         }
 
-        ul,ol,li,p {
+        ul,ol,p {
             margin: 0.5rem auto;
+        }
+        
+        li > ul, li > ol {
+            margin: auto;
         }
     }
 
