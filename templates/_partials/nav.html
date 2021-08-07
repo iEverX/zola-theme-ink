@@ -15,6 +15,11 @@
                 {% set page = get_page(path=path) %}
                 {% set title = nav.title | default(value=nav.value) %}
                 {{ site::nav_item(url=page.permalink, title=title) }}
+            {% elif nav.type == "section" %}
+                {% set path = nav.value ~ "/_index.md" %}
+                {% set section = get_section(path=path) %}
+                {% set title = nav.title | default(value=nav.value) %}
+                {{ site::nav_item(url=section.permalink, title=title) }}
             {% elif nav.type == "link" %}
                 {{ site::nav_item(url=nav.url, title=nav.title) }}
             {% endif %}

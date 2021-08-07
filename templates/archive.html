@@ -2,8 +2,7 @@
 {% import "_macros/post.html" as post %}
 {% block main %}
 <div class="archive">
-    <h1 class="title" id="page-title">{{ page.title }} </h1>
-    {% set section = get_section(path="post/_index.md") %}
+    <h1 class="title" id="page-title">{{ section.title }} </h1>
     {% set year_posts = section.pages | group_by(attribute="year") %}
 
     {% set years = [] %}
