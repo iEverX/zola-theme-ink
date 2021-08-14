@@ -175,27 +175,32 @@ blockquote {
         h1 {
             font-size: 1.5rem;
             &::before {
-                content: '# ';
+                content: '#';
                 color: #999;
                 font-size: 75%;
+                margin-right: 8px;
             }
         }
 
         h2 {
             font-size: 1.4rem;
             &::before {
-                content: '## ';
+                content: '##';
                 color: #999;
                 font-size: 75%;
+                letter-spacing: -3px;
+                margin-right: 8px;
             }
         }
 
         h3 {
             font-size: 1.2rem;
             &::before {
-                content: '### ';
+                content: '###';
                 color: #999;
                 font-size: 75%;
+                letter-spacing: -3px;
+                margin-right: 8px;
             }
         }
 
@@ -209,7 +214,7 @@ blockquote {
     }
 
     h1, h2, h3 {
-        color: #444;
+        color: #222;
     }
 
     & > .post-title {
@@ -220,10 +225,10 @@ blockquote {
         color: #333;
         padding: 0 3px;
         margin: 0 -3px;
-        border-bottom: 1px solid #aaa;
+        border-bottom: 1px solid #666;
         &:hover {
             color: #000;
-            border-bottom: 1px solid #666;
+            border-bottom: 2px solid #333;
         }
     }
 
