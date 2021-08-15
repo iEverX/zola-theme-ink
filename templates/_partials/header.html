@@ -3,7 +3,7 @@
     <div class="header-container">
         <div class="brand">
             <h1 class="u-link">
-                <a href="/">{{ config.title }}</a>
+                <a href="{{ get_url(path="/") }}">{{ config.title }}</a>
             </h1>
         </div>
         {{ nav::nav() }}
