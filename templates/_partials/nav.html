@@ -6,14 +6,14 @@
     <div class="nav">
         {% for nav in config.extra.nav %}
             {% if nav.type == "taxonomy" %}
-                {# {% set taxonomy = get_taxonomy(kind=nav.value) %} #}
                 {% set url = get_url(path=nav.value) %}
                 {% set title = nav.title | default(value=nav.value) %}
                 {{ site::nav_item(url=url, title=title) }}
             {% elif nav.type == "page" %}
-                {% set path = nav.value ~ "/index.md" %}
+                {% set path = nav.value ~ ".md" %}
                 {% set page = get_page(path=path) %}
-                {% set title = nav.title | default(value=nav.value) %}
+                {% set last_part = nav.value | split(pat="/") | last %}
+                {% set title = nav.title | default(value=last_part) %}
                 {{ site::nav_item(url=page.permalink, title=title) }}
             {% elif nav.type == "section" %}
                 {% set path = nav.value ~ "/_index.md" %}
